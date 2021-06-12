@@ -1,0 +1,183 @@
+﻿
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<style>
+	body{
+	font-family: 'Open Sans', sans-serif;
+	}
+	.logo i {
+	font-size: 31px;
+	margin-right: 4px;
+	word-spacing: 14px;
+	}
+	.logo{
+	color: white;
+	margin: 0;
+	font-size: 20px;
+	padding: 4px 0;
+	padding-bottom: 15px;
+
+	}
+	.login-bottom-text{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	color: white;
+	line-height: 19px;
+	}
+
+	header{
+	background: #343a40;
+	padding-top: 20px;
+	}
+	header .form-group{
+	margin-bottom: 0px;
+	}
+	header .btn-header-login{
+	margin-bottom: 15px;
+	}
+	.login-main{
+	margin-top: 130px;
+	}
+	.multibox{
+	padding-left: 0px;
+	padding-bottom: 10px;
+	}
+	.login-main span{
+	font-size: 12px;
+	}
+
+
+	footer hr{
+	margin-top: 0px;
+	padding-top: 0px;
+	}
+	.footer-options ul{
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	}
+	.footer-options ul li{
+	float:left;
+	list-style: none;
+	padding: 5px;
+	font-size: 12px;
+	}
+	.footer-options ul li a{
+	text-decoration: none;
+	color: #000;
+	}
+	.copyrights{
+	margin-top: 25px;
+	}
+
+	.formu{
+	margin-top:140px;
+	}
+
+
+	.logo a{
+	color: white;
+	}
+
+	a {
+	color: white;
+	}
+	a:visited {
+	color: white;
+	}
+	a:hover, a:active, a:focus {
+	color:yellow;
+	}
+
+
+</style>
+
+
+
+<header>
+    <div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+            <div class="logo">
+                
+				<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+           
+		</div>
+		<div class="col-sm-6 hidden-xs">
+			<div class="row">
+				<div class="col-sm-5">
+					  <div class="form-group">
+					    <input type="text" class="form-control" placeholder="Email Address">
+					    <div class="login-bottom-text checkbox hidden-sm">
+						    <label>
+						      <input type="checkbox" id="">
+						      Recordar email
+						    </label>
+						  </div>
+					  </div>
+				</div>	
+				<div class="col-sm-5">
+					 <div class="form-group">
+					    <input type="password" class="form-control" placeholder="Contraseña">
+					    <div class="login-bottom-text hidden-sm">
+							<a href="enlacepagina.html" link="red"  >Olvidaste tu clave?</a>  </div>
+					  </div>
+				</div>
+				<div class="col-sm-2">
+					 <div class="form-group">
+					    <input type="button" value="Login" class="btn btn-primary">
+					  </div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	</div>
+</header>
+<article class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="login-main">
+					<img src="~/img/fotoform.jpg" height="400" alt="auto">
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="formu">
+				
+				<h3><i class="fa fa-shield"></i><b>Nuevo usuario:</b></h3>
+			  	<hr>
+				<div class="form-group">
+				  <label class="control-label" for="">Dirección de email</label>
+				  <input type="text" class="form-control" placeholder="Dirección de email">
+				</div>
+
+				<div class="form-group">
+				  <label class="control-label" for="">Contraseña</label>
+				  <input type="password" class="form-control" placeholder="Contraseña">
+				</div>
+
+				<div class="form-group">
+				  <label class="control-label" for="">Repetir contraseña</label>
+				  <input type="password" class="form-control" placeholder="Repetir contraseña">
+				</div>
+
+				
+		      
+				<small>
+					Al hacer clic en Registrarse, acepta nuestros Términos y ha leído nuestra Política de uso de datos, incluido nuestro Uso de cookies.
+				</small>	 
+				<div style="height:10px;"></div>
+				<div class="form-group">
+				  <label class="control-label" for=""></label>
+				  <input type="submit" class="btn btn-primary" value="Registrarse">
+				</div>	 
+
+				  </div>
+			</div>
+			</div>
+		</div>
+</article>

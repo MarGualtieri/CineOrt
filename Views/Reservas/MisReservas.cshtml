@@ -1,0 +1,30 @@
+﻿@model List<Reserva>
+@{
+    ViewData["Title"] = "MisReservas";
+}
+
+<h1>Mis reservas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Pelicula</th>
+            <th>Sala</th>
+            <th>Tipo Sala</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Reserva reserva in Model)
+        {
+            <tr>
+                <td>@reserva.FechaAlta</td>
+                <td>@reserva.Estado.ToString()</td>
+                <td>@reserva.Funcion.Pelicula.Descripcion</td>
+                <td>@reserva.Funcion.Sala.Numero</td>
+                <td>@reserva.Funcion.Sala.TipoSala.Nombre</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Reserva_Cine.Models.Pelicula>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>PELICULAS</h2>
+@if (User.IsInRole(nameof(Rol.Empleado)) || User.IsInRole(nameof(Rol.Administrador)))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-outline-primary">Crear pelicula </a>
+        <a href="../Home/Index" class="btn btn-danger">Cancelar</a>
+    </p>
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaLanzamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genero)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td >
+                @Html.DisplayFor(modelItem => item.FechaLanzamiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genero.Nombre)
+            </td>
+            
+            <td>
+                @if (User.IsInRole(nameof(Rol.Empleado)) || User.IsInRole(nameof(Rol.Administrador)))
+                {
+                    <a class="btn btn-outline-warning btn-sm" asp-action="Edit" asp-route-id="@item.ID">Editar</a>
+                    <a class="btn btn-outline-info btn-sm ml-1" asp-action="Details" asp-route-id="@item.ID">Ver detalles</a>
+                    <a class="btn btn-outline-danger btn-sm ml-1" asp-action="Delete" asp-route-id="@item.ID">Eliminar</a>
+                }
+                <a class="btn btn-outline-info btn-sm ml-1" asp-action="Funciones" asp-route-id="@item.ID">Proximas funciones</a>
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,99 @@
+﻿/* CARRUSEL */
+body {
+  padding-top: 56px;
+  color: black;  
+  background-color: #;000000
+
+}
+
+.carousel-control-prev-icon { 
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E"); 
+  width: 30px;
+  height: 48px;
+}
+
+.carousel-control-next-icon { 
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 48px;
+}
+
+/* FORMULARIO */
+
+/*topography*/
+h1,h2,h3,h4{
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+p,label{
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.navbar{
+	font-family: 'Roboto', sans-serif;
+}
+
+#Contact-form{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	background: #292929;
+	color: #fff;
+}
+
+form{
+	margin: 30px auto;
+}
+
+textarea.form-control {
+    height: 135px;
+   
+}
+
+.submit{
+	width: 150px;
+}
+
+/*Footer*/
+footer{
+	background: #E6E6E6;
+	height: 150px;
+	width: 100vw;
+  margin-bottom: 50PX;
+  
+}
+
+.brand-name {
+	padding-top: 30px;
+}
+
+footer  .fa{
+	font-size: 22px;
+}
+.social{
+	padding-top: 30px;
+}
+
+.fa-space{
+	padding-left: 20px;
+}
+/*Media Queries*/
+@media (max-width: 460px){
+	footer{
+		height: 120px;
+	}
+
+	.social{
+	padding-top: 10px;
+	float: left;
+	text-align: center;
+}
+}
+
+.fotocandy{
+  display: block;
+ justify-content: center;
+  margin: 0 auto;
+}

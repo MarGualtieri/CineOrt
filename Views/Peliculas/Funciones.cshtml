@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewData["Title"] = "Funciones";
+}
+@{
+    Funcion funcione = new Funcion();
+    if (Model.Funciones.Count!=0) {
+<h1>Funciones</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => funcione.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => funcione.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => funcione.Hora)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => funcione.Sala.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => funcione.Sala.TipoSala)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+
+<tbody>
+    @foreach (Funcion funciones in Model.Funciones)
+    {
+        if (funciones.Confirmada && DateTime.Now.CompareTo(funciones.Fecha) <= 7 && DateTime.Now.CompareTo(funciones.Fecha) >= 0)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => funciones.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => funciones.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => funciones.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => funciones.Sala.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => funciones.Sala.TipoSala.Nombre)
+            </td>
+        </tr>
+        }
+    }
+
+    </tbody>
+    </table>
+    }
+    else
+    {
+        <div>No Hay funciones para los proximos 7 dias.</div>
+    }
+    
+} 

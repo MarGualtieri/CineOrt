@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Reserva_Cine.Models.Funcion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mis Funciones</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-primary">Crear Funcion </a>
+    <a href="../Home/Index" class="btn btn-danger">Cancelar</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pelicula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sala)
+            </th>
+            @if (User.IsInRole(nameof(Rol.Empleado)))
+            {
+
+                <th>
+                    @Html.DisplayNameFor(model => model.ButacasDisponibles)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Confirmada)
+                </th>
+            }
+
+                <th></th>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Confirmada == true)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pelicula.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sala.Numero)
+            </td>
+            @if (User.IsInRole(nameof(Rol.Empleado)))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.ButacasDisponibles)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Confirmada)
+                </td>
+                <td>
+                    <a class="btn btn-outline-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-outline-info btn-sm ml-1" asp-action="Details" asp-route-id="@item.Id">Ver detalles</a>
+                    <a class="btn btn-outline-danger btn-sm ml-1" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            }
+
+        </tr>
+            }
+
+            else @if (User.IsInRole(nameof(Empleado)))
+      {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pelicula.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sala.Numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ButacasDisponibles)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Confirmada)
+        </td>
+        <td>
+            <a class="btn btn-outline-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+            <a class="btn btn-outline-info btn-sm ml-1" asp-action="Details" asp-route-id="@item.Id">Ver detalles</a>
+            <a class="btn btn-outline-danger btn-sm ml-1" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+        </td>
+    </tr>
+    }
+            
+            }
+        </tbody>
+    </table>

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "ReservaClienteFirst";
+}
+
+<h2>Seleccione la película:</h2>
+
+@model Reserva_Cine.Models.Wizard
+
+
+<div class="row">
+    <div class="col-md-4">
+        @if (ViewBag.tieneReserva == 0)
+        {
+            using (Html.BeginForm("ReservaClienteSecond", "Reservas"))
+            {
+                <div class="form-group">
+                    <label asp-for="PeliculaId" class="control-label"></label>
+                    <select asp-for="PeliculaId" class="form-control" asp-items="ViewBag.PeliculaId"></select>
+                </div>
+
+                <input class="button" id="submit" type="submit" value="Continuar" />
+
+            }
+        }
+        else
+        {
+            <p>El usuario ya tiene una reserva activa</p>
+            <a href="../Home/Index" class="btn btn-danger">Cancelar</a>
+        }
+
+    </div>
+</div>

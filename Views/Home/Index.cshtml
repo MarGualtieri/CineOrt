@@ -1,0 +1,546 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+ <body> 
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CINEMA ORT BELGRANO</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+ 
+   <link rel="stylesheet" href="~/css/estilos.css" />
+   <link href="wwwroot/css/estilos.css" rel="stylesheet">
+</head>
+
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CINEMA ORT - BELGRANO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">
+                      Home
+                      <span class="sr-only">(current)</span>
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link" href="#candyfoto">Candy Store</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#Contact-form">Contacto</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="../Peliculas">Cartelera</a>
+              </li>
+
+
+              <li class="nav-itemAcceso">
+
+                  <a asp-controller="Accesos" asp-action="Login" class="btn btn-success">
+                      Login
+                  </a>
+                  <a asp-controller="Clientes" asp-action="Create" class="btn btn-primary">
+                      Registrarse
+                  </a>
+              </li>
+
+          </ul>
+      </div>
+    </div>
+  </nav>
+
+	 <!-- Page Content -->
+	 <div class="container">
+		 <div class="row justify-content-center">
+
+			 <!-- /.col-lg-3 -->
+
+             <div class="col-lg-9">
+                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner" role="listbox">
+                         <div class="carousel-item active">
+                             <img class="d-block img-fluid" src="../IMG/banner1.jpg" alt="First slide">
+                         </div>
+                         <div class="carousel-item">
+                             <img class="d-block img-fluid" src="../IMG/banner2.jpg" alt="Second slide">
+                         </div>
+                         <div class="carousel-item">
+                             <img class="d-block img-fluid" src="../IMG/banner3.jpg" alt="Third slide">
+                         </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                         <span class="sr-only">Next</span>
+                     </a>
+                 </div>
+
+                 <div class="row">
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/PEL1.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">SHERLOCK HOLMES</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b> Robert Downey Jr., Jude Law, Rachel McAdams, Mark Strong.<br>
+                                     <b>Género:</b> Aventura, Acción<br>
+                                     <b>Duración:</b> 128 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/pel2.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">LA BELLA Y LA BESTIA</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b>  Emma Watson, Dan Stevens, Luke Evans.<br>
+                                     <b>Género:</b> Fantasia musical<br>
+                                     <b>Duración:</b> 129 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9733;</small>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/pel3.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">NINA</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b> Zoe saldaña, David Oyelowo, Ronald Guttman.<br>
+                                     <b>Género:</b> Drama<br>
+                                     <b>Duración:</b> 90 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9734; &#9734; &#9734;</small>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/pel4.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">BAJO LA PIEL DE LOBO</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b> Mario Casas, Irene Escolar, Ruth Díaz,.<br>
+                                     <b>Género:</b> Drama<br>
+                                     <b>Duración:</b> 110 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/pel5.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">ORIGEN</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b> Leonardo Di Caprio, Joseph Gordon-Levitt, Ellen Page, Ken Watanabe<br>
+                                     <b>Género:</b> Acción<br>
+                                     <b>Duración:</b> 148 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9734; &#9734; &#9734;</small>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="col-lg-4 col-md-6 mb-4">
+                         <div class="card h-100">
+                             <a href="#">
+                                 <img class="card-img-top" src="../img/pel6.jpg" alt="auto">
+                             </a>
+                             <div class="card-body">
+                                 <h4 class="card-title">
+                                     <a href="#">3 METROS SOBRE EL CIELO</a>
+                                 </h4>
+
+                                 <p class="card-text">
+                                     <b>Actores:</b> Mario Casas, María Valverde, Álvaro Cervantes.<br>
+                                     <b>Género:</b> Romance<br>
+                                     <b>Duración:</b> 120 min.
+                                 </p>
+                             </div>
+                             <div class="card-footer">
+                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9734; &#9734;</small>
+                             </div>
+                         </div>
+                     </div>
+
+
+
+
+                 </div>
+
+                 <!-- /.row -->
+
+             </div>
+			 <!-- /.col-lg-9 -->
+
+		 </div>
+		 <!-- /.row -->
+
+	 </div>
+	 <!-- /.container -->
+
+
+	 <!----------------------------------candy------------------------------------>
+
+
+	 <div class="container">
+		 <img id="candyfoto" src="/img/Banner promo.png" alt="pochoclo" style="width:75%" class="mx-auto d-block">
+
+</div>
+
+	 <br>
+
+
+		 <!----------------------------------CARRITO DE COMPRA------------------------------------>
+
+
+		 <div class="containerC">
+
+			 <script>
+				 window.onload = function () {
+				 // Variables
+				 let baseDeDatos = [
+				 {
+				 id: 1,
+				 nombre: 'Coca y Pochoclo',
+				 precio: 450,
+				 imagen: '../img/coca.jpg',
+				 },
+				 {
+				 id: 2,
+				 nombre: 'Balde Grande',
+				 precio: 350,
+				 imagen: '../img/balde.jpg',
+				 },
+
+
+				 {
+				 id: 3,
+				 nombre: 'Nachos + Bebida',
+				 precio: 250,
+				 imagen: '../img/nachos.jpg',
+				 }
+
+				 ]
+				 let $items = document.querySelector('#items');
+				 let carrito = [];
+				 let total = 0;
+				 let $carrito = document.querySelector('#carrito');
+				 let $total = document.querySelector('#total');
+				 let $botonVaciar = document.querySelector('#boton-vaciar');
+				 let $botonComprar = document.querySelector('#boton-comprar');
+
+				 // Funciones
+				 function renderItems() {
+				 for (let info of baseDeDatos) {
+				 // Estructura
+				 let miNodo = document.createElement('div');
+				 miNodo.classList.add('card', 'col-sm-4');
+				 // Body
+				 let miNodoCardBody = document.createElement('div');
+				 miNodoCardBody.classList.add('card-body');
+				 // Titulo
+				 let miNodoTitle = document.createElement('h5');
+				 miNodoTitle.classList.add('card-title');
+				 miNodoTitle.textContent = info['nombre'];
+				 // Imagen
+				 let miNodoImagen = document.createElement('img');
+				 miNodoImagen.classList.add('img-fluid');
+				 miNodoImagen.setAttribute('src', info['imagen']);
+				 // Precio
+				 let miNodoPrecio = document.createElement('p');
+				 miNodoPrecio.classList.add('card-text');
+				 miNodoPrecio.textContent = info['precio'] + '$';
+				 // Boton
+				 let miNodoBoton = document.createElement('button');
+				 miNodoBoton.classList.add('btn', 'btn-primary');
+				 miNodoBoton.textContent = '+ AGREGAR';
+				 miNodoBoton.setAttribute('marcador', info['id']);
+				 miNodoBoton.addEventListener('click', anyadirCarrito);
+				 // Insertamos
+				 miNodoCardBody.appendChild(miNodoImagen);
+				 miNodoCardBody.appendChild(miNodoTitle);
+				 miNodoCardBody.appendChild(miNodoPrecio);
+				 miNodoCardBody.appendChild(miNodoBoton);
+				 miNodo.appendChild(miNodoCardBody);
+				 $items.appendChild(miNodo);
+				 }
+				 }
+
+				 function anyadirCarrito () {
+				 // Anyadimos el Nodo a nuestro carrito
+				 carrito.push(this.getAttribute('marcador'))
+				 // Calculo el total
+				 calcularTotal();
+				 // Renderizamos el carrito
+				 renderizarCarrito();
+				 }
+
+				 function renderizarCarrito() {
+				 // Vaciamos todo el html
+				 $carrito.textContent = '';
+				 // Quitamos los duplicados
+				 let carritoSinDuplicados = [...new Set(carrito)];
+				 // Generamos los Nodos a partir de carrito
+				 carritoSinDuplicados.forEach(function (item, indice) {
+				 // Obtenemos el item que necesitamos de la variable base de datos
+				 let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+				 return itemBaseDatos['id'] == item;
+				 });
+				 // Cuenta el número de veces que se repite el producto
+				 let numeroUnidadesItem = carrito.reduce(function (total, itemId) {
+				 return itemId === item ? total += 1 : total;
+				 }, 0);
+				 // Creamos el nodo del item del carrito
+				 let miNodo = document.createElement('li');
+				 miNodo.classList.add('list-group-item', 'text-right', 'mx-2');
+				 miNodo.textContent = `${numeroUnidadesItem} x ${miItem[0]['nombre']} - ${miItem[0]['precio']}$`;
+				 // Boton de borrar
+				 let miBoton = document.createElement('button');
+				 miBoton.classList.add('btn', 'btn-danger', 'mx-5');
+				 miBoton.textContent = 'X';
+				 miBoton.style.marginLeft = '1rem';
+				 miBoton.setAttribute('item', item);
+				 miBoton.addEventListener('click', borrarItemCarrito);
+				 // Mezclamos nodos
+				 miNodo.appendChild(miBoton);
+				 $carrito.appendChild(miNodo);
+				 })
+				 }
+
+				 function borrarItemCarrito() {
+				 console.log()
+				 // Obtenemos el producto ID que hay en el boton pulsado
+				 let id = this.getAttribute('item');
+				 // Borramos todos los productos
+				 carrito = carrito.filter(function (carritoId) {
+				 return carritoId !== id;
+				 });
+				 // volvemos a renderizar
+				 renderizarCarrito();
+				 // Calculamos de nuevo el precio
+				 calcularTotal();
+				 }
+
+				 function calcularTotal() {
+				 // Limpiamos precio anterior
+				 total = 0;
+				 // Recorremos el array del carrito
+				 for (let item of carrito) {
+				 // De cada elemento obtenemos su precio
+				 let miItem = baseDeDatos.filter(function(itemBaseDatos) {
+				 return itemBaseDatos['id'] == item;
+				 });
+				 total = total + miItem[0]['precio'];
+				 }
+				 // Formateamos el total para que solo tenga dos decimales
+				 let totalDosDecimales = total.toFixed(2);
+				 // Renderizamos el precio en el HTML
+				 $total.textContent = totalDosDecimales;
+				 }
+
+				 function vaciarCarrito() {
+				 // Limpiamos los productos guardados
+				 carrito = [];
+				 // Renderizamos los cambios
+				 renderizarCarrito();
+				 calcularTotal();
+				 }
+				 function vaciarCarrito2() {
+				 // Limpiamos los productos guardados
+				 carrito = [];
+				 // Renderizamos los cambios
+				 renderizarCarrito();
+				 calcularTotal();
+
+				 var tarjeta = prompt("INGRESE SU TARJETA DE CREDITO");
+
+				 if (tarjeta != "") {
+				 alert("COMPRA REALIZADA CON EXITO" );
+
+				 }else{
+				 alert("ERROR DE INGRESO");
+				 }
+
+
+				 }
+
+				 // Eventos
+				 $botonVaciar.addEventListener('click', vaciarCarrito);
+				 $botonComprar.addEventListener('click', vaciarCarrito2);
+
+				 // Inicio
+				 renderItems();
+				 }
+			 </script>
+			
+				 <div class="containerCompra-fluid">
+					 <div class="row">
+
+						 <main id="items" class="col-sm-12 row"></main>
+						 <!-- Carrito -->
+						 <aside class="col-sm-8 ">
+							 <h2>Carrito</h2>
+							 <!-- Elementos del carrito -->
+							 <ul id="carrito" class="list-group"></ul>
+							 <hr>
+								 <!-- Precio total -->
+								 <p class="text-right">
+									 <span id="total">Total </span>$;
+								 </p>
+								 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+								 <button id="boton-comprar" class="btn btn-success">Comprar</button>
+							 </aside>
+					 </div>
+				 </div>
+
+			 </div>
+		 <br>
+			 <br>
+		 <!----------------------------------FORMULARIO------------------------------------>
+
+
+
+		 <section id="Contact-form">
+			 <br>
+				 <div class="container">
+					 <div class="contact-header" align="center">
+						 <h2>CONTACTO</h2>
+						 <p>Envianos tu consulta</p>
+					 </div>
+					 <!-- Form  -->
+					 <form>
+						 <div class="row">
+							 <div class="col-md-4 col-sm-4">
+								 <h4 align="center">
+									 <strong>ORT CINEMA,</strong>
+								 </h4>
+								 <p align="center">
+									 <strong>Direccion:</strong>  Avenida del Libertador,<br>
+										 Argentina<br>
+											 <br>
+												 <strong>Contacto:</strong> +54-123456987
+								 </p>
+							 </div>
+							 <div class="col-md-4 col-sm-4 ">
+								 <div class="form-group">
+									 <label for="exampleInputUsername">Nombre</label>
+									 <input type="email" class="form-control" id="exampleInputUsername" placeholder=" Ingrese su nombre">
+                </div>
+								 <div class="form-group">
+									 <label for="exampleInputEmailId">Email</label>
+									 <input type="password" class="form-control" id="exampleInputEmailId" placeholder="Ingrese email-id">
+                </div>
+								 <div class="form-group">
+									 <label for="exampleInputnumber">Celular</label>
+									 <input type="password" class="form-control" id="exampleInputnumber" placeholder="ingrese su telefono">
+                </div>
+
+							 </div>
+							 <div class="col-md-4 col-sm-4">
+								 <div class="form-group">
+									 <label for="exampleInputtext">Titulo</label>
+									 <input type="password" class="form-control" id="exampleInputtext" placeholder="Titulo de su consulta">
+                </div>
+								 <div class="form-group">
+									 <label for="inputMessage">Mensaje</label>
+									 <textarea  class="form-control" for="inputMessage" placeholder="Ingrese su mensaje"></textarea>
+								 </div>
+								 <div>
+									 <button type="button" class="btn btn-primary">
+										 <i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar Consulta
+									 </button>
+								 </div>
+								 <br>
+              </div>
+
+						 </div>
+					 </form>
+
+				 </section>
+		 <br>
+	
+
+			 <!-- Bootstrap core JavaScript -->
+			 <script src="vendor/jquery/jquery.min.js"></script>
+			 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			 <script src="javascript.js"></script>
+		 </body>
+
+</html>

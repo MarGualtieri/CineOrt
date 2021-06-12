@@ -1,0 +1,134 @@
+﻿@model Reserva_Cine.Models.Pelicula
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>PELICULA</h1>
+
+<div>
+    <h4>Detalle de Pelicula</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genero.Nombre)
+
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaLanzamiento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaLanzamiento)
+        </dd>
+        <dt class="col-sm-2">
+            Ingresos generados este mes
+        </dt>
+        <dd class="col-sm-10">
+            @{ 
+                decimal total = 0;
+                foreach (Funcion funcion in Model.Funciones)
+                {
+                    if (funcion.Fecha.Month == DateTime.Now.Month)
+                    {
+                        foreach (Reserva reserva in funcion.Reservas)
+                        {
+                            total = total + reserva.CantidadButacas * funcion.Sala.TipoSala.Precio;
+
+                        }
+                    }
+                }
+
+            }
+            @total
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-danger">Cancelar</a>
+</div>
+
+
+
+
+
+<h4>Funciones</h4>
+<h5>Pasadas</h5>
+@if (Model.Funciones.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+                <th>Fecha</th>
+                <th>Sala</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Funcion funcion in Model.Funciones)
+            {
+                if (funcion.Fecha < DateTime.Now)
+                {
+                    <tr>
+                        <td>@Model.Titulo</td>
+                        <td>@funcion.Fecha </td>
+                        <td>@funcion.Sala.Numero</td>
+                        
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h6>No hay funciones</h6>
+}
+
+<h5>Futuras</h5>
+
+@if (Model.Funciones.Count > 0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Pelicula</th>
+                <th>Fecha</th>
+                <th>Sala</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Funcion funcion in Model.Funciones)
+            {
+                if (funcion.Fecha >= DateTime.Now)
+                {
+                    <tr>
+                        <td>@Model.Titulo</td>
+                        <td>@funcion.Fecha </td>
+                        <td>@funcion.Sala.Numero</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h6>No hay funciones</h6>
+}
